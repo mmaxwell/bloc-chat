@@ -1,7 +1,7 @@
 {
   "name": "bloc-chat",
-  "version": "0.0.0",
-  "description": "Small description for bloc-chat goes here",
+  "version": "1.0.0",
+  "description": "Simple chat application built on mirage mock data.",
   "private": true,
   "directories": {
     "doc": "doc",
