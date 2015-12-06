@@ -1,15 +1,17 @@
 import Ember from "ember";
 
 export function initialize(application) {
-  let jQuery = Ember.$;
+  let jQuery = Ember.$,
+    Session;
 
-  let Session = Ember.Object.extend({
+  Session = Ember.Object.extend({
     init() {
+      let userInformation;
+
       this._super(...arguments);
 
-      let userInformation = jQuery.cookie("user");
-
-      if (userInformation) {
+      userInformation = jQuery.cookie("user");
+      if (userInformation !== undefined) {
         this.setProperties(JSON.parse(userInformation));
       }
     },

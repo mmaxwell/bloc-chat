@@ -6,10 +6,10 @@ export default function() {
   this.get("/messages/:id");
   this.get("/users/:id");
   this.post("/authenticate", function (db, request) {
-    let { userName, password } = JSON.parse(request.requestBody);
-    let user = db.users.where({ userName, password });
+    let { userName, password } = JSON.parse(request.requestBody),
+      user = db.users.where({ userName, password });
 
-    if (user.length) {
+    if (user.length > 0) {
       return new Mirage.Response(200);
     } else {
       return new Mirage.Response(400);
