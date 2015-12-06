@@ -1,3 +1,17 @@
 <h2>Login</h2>
 
-<p>Login!</p>
+{{#if showAuthenticationError}}
+  <span>{{authenticationErrorMessage}}</span>
+{{/if}}
+
+{{input type="text" value=userName}}
+{{#if showUserNameError}}
+  <span>{{userNameErrorMessage}}</span>
+{{/if}}
+
+{{password-field password=password}}
+{{#if showPasswordError}}
+  <span>{{passwordErrorMessage}}</span>
+{{/if}}
+
+<button type="button" {{action "authenticate"}}>Login</button>

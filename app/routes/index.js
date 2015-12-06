@@ -7,5 +7,10 @@ export default Ember.Route.extend({
     } else {
       this._super(...arguments);
     }
+  },
+  actions: {
+    userAuthenticated() {
+      console.log("User authenticated from the index route.");
+    }
   }
 });

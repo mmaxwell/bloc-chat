@@ -1,5 +1,5 @@
 {{#if session.isLoggedIn}}
   {{chat-container rooms=model}}
 {{else}}
-  {{login-form}}
+  {{login-form action="userAuthenticated"}}
 {{/if}}
