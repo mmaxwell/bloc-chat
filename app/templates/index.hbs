@@ -1,0 +1,5 @@
+{{#if session.isLoggedIn}}
+  {{chat-container rooms=model}}
+{{else}}
+  {{login-form}}
+{{/if}}

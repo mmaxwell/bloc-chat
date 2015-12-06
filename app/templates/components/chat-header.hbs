@@ -1,0 +1,12 @@
+<nav>
+  <div class="brand">Bloc Chat</div>
+  <ul class="actions">
+    <li>
+      {{#if isLoggedIn}}
+        {{#link-to "logout"}}Logout{{/link-to}}
+      {{else}}
+        {{#link-to "login"}}Login{{/link-to}}
+      {{/if}}
+    </li>
+  </ul>
+</nav>
