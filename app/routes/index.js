@@ -4,13 +4,11 @@ export default Ember.Route.extend({
   model() {
     if (this.get("session.isLoggedIn")) {
       return this.store.findAll("room");
-    } else {
-      this._super(...arguments);
     }
   },
   actions: {
-    userAuthenticated() {
-      console.log("User authenticated from the index route.");
+    userAuthenticated(information) {
+      this.get("session").setProperties(information);
     }
   }
 });

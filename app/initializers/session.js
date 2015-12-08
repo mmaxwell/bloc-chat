@@ -16,8 +16,12 @@ export function initialize(application) {
       }
     },
 
-    isLoggedIn: Ember.computed("userToken", function () {
-      return this.get("userToken") !== undefined;
+    isLoggedIn: Ember.computed("token", "userName", function () {
+      return this.get("token") !== undefined && this.get("userName") !== undefined;
+    }),
+
+    updateCookies: Ember.observer("token", "userName", function () {
+
     })
   });
 

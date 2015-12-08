@@ -40,8 +40,9 @@ export default Ember.Component.extend({
         return;
       }
 
-      jQuery.post("/authenticate", JSON.stringify({ userName, password })).then(() => {
-        this.sendAction();
+      jQuery.post("/authenticate", JSON.stringify({ userName, password })).then((response) => {
+        let token = response.token;
+        this.sendAction(undefined, { userName, token });
       }, () => {
         this.set("authenticationErrorMessage", "There was an error authenticating your account.");
       });

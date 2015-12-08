@@ -1,5 +1,9 @@
 {{#if session.isLoggedIn}}
   {{chat-container rooms=model}}
 {{else}}
+  <h2>Bloc Chat</h2>
+
+  <p>Blah blah blah some information about bloc chat</p>
+
   {{login-form action="userAuthenticated"}}
 {{/if}}
