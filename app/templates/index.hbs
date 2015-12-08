@@ -1,5 +1,5 @@
-{{#if session.isLoggedIn}}
-  {{chat-container rooms=model}}
+{{#if model.isLoggedIn}}
+  {{chat-container rooms=model.rooms}}
 {{else}}
   <h2>Bloc Chat</h2>
 

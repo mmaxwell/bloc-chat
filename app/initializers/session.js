@@ -21,8 +21,19 @@ export function initialize(application) {
     }),
 
     updateCookies: Ember.observer("token", "userName", function () {
+      let userName = this.get("userName"),
+        token = this.get("token");
 
-    })
+      jQuery.cookie("user", JSON.stringify({ userName, token }));
+    }),
+
+    logout() {
+      jQuery.removeCookie("user");
+      this.setProperties({
+        userName: undefined,
+        token: undefined
+      });
+    }
   });
 
   application.register("session:main", Session);

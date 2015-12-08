@@ -1,10 +1,15 @@
 import Ember from "ember";
 
 export default Ember.Route.extend({
+  beforeModel() {
+    if (this.get("session.isLoggedIn")) {
+      this.transitionTo("index");
+    }
+  },
   actions: {
     userAuthenticated(information) {
       this.get("session").setProperties(information);
-      this.routeTo("index");
+      this.transitionTo("index");
     }
   }
 });
